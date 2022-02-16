@@ -1,0 +1,17 @@
+<br>
+<br>
+
+<h2> <%= @restaurant.name %> </h2>
+<ul>
+  <li>Address: <%= @restaurant.address %> </li>
+  <li>Category: <%= @restaurant.category %> </li>
+  <li>Phone number: <%= @restaurant.phone_number %> </li>
+</ul>
+
+<%= link_to 'Leave a review', new_restaurant_review_path(@restaurant) %>
+
+<hr>
+
+<%= link_to restaurants_path do %>
+  <i class="fa fa-history"></i> Back to list
+<% end %>
