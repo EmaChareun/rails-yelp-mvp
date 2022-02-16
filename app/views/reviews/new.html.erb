@@ -2,10 +2,12 @@
 <br>
 
 <%= simple_form_for [ @restaurant, @review ] do |f| %>
-  <%= f.input :content %>
-  <%= f.submit "Submit review", class: "btn btn-primary" %>
-<% end %>
+    <h1><%= @restaurant.name %></h1>
+    <%= f.input :rating, collection: 0..5, label: "Rating (0 to 5)"%>
+    <%= f.input :content %>
+    <%= f.submit "Submit review", class: "btn btn-primary" %>
+  <% end %>
 
 <%= link_to restaurants_path do %>
-  <i class="fa fa-history"></i> Back to list
+  <i class="fa fa-history"></i> Back to home
 <% end %>

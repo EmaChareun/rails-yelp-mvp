@@ -6,6 +6,9 @@
   <li>Address: <%= @restaurant.address %> </li>
   <li>Category: <%= @restaurant.category %> </li>
   <li>Phone number: <%= @restaurant.phone_number %> </li>
+  <li>Review: <% @restaurant.reviews.each do |review| %>
+  <%= review.content.last %></li>
+  <% end %>
 </ul>
 
 <%= link_to 'Leave a review', new_restaurant_review_path(@restaurant) %>
@@ -13,5 +16,5 @@
 <hr>
 
 <%= link_to restaurants_path do %>
-  <i class="fa fa-history"></i> Back to list
+  <i class="fa fa-history"></i> Back to home
 <% end %>
